@@ -17,10 +17,9 @@ public class Limbo {
         FileInputStream input = new FileInputStream("C:\\Users\\berga\\Desktop\\classe\\LimboDB\\resources\\limbo.properties");
         Properties props = new Properties();
         props.load(input);
-        String URL = props.getProperty("url");
+        /*String URL = props.getProperty("url");
         String USERNAME = props.getProperty("user");
-        String PASSWORD = props.getProperty("password");
-        info("username " + USERNAME);
+        String PASSWORD = props.getProperty("password");*/
         Scanner scanner = new Scanner(System.in);
         System.out.println(Color.YELLOW_BRIGHT + """
                 **************************************************
@@ -38,10 +37,23 @@ public class Limbo {
             switch (opcio) {
                 case 1 -> {
                     System.out.println(Color.YELLOW_BRIGHT + """
-                **************************************************
-                **                  Registre                    **
-                **************************************************
-                """);
+                            **************************************************
+                            **                     Login                    **
+                            **************************************************
+                            """);
+                    System.out.println(Color.BLACK_BOLD + "" + Color.YELLOW_BACKGROUND + "Username:" + Color.RESET);
+                    String nomUsuari = scanner.nextLine();
+                    System.out.println(Color.BLACK_BOLD + "" + Color.YELLOW_BACKGROUND + "Password:" + Color.RESET);
+                    limboDAO.loginUsuari(nomUsuari);
+                    String passUsuari = scanner.nextLine();
+                    limboDAO.loginUsuari(passUsuari);
+                }
+                case 2 -> {
+                    System.out.println(Color.YELLOW_BRIGHT + """
+                            **************************************************
+                            **                  Registre                    **
+                            **************************************************
+                            """);
                     System.out.println(Color.WHITE_BRIGHT);
                     System.out.println("Username:");
                     String nomUsuari = scanner.nextLine();
@@ -60,7 +72,7 @@ public class Limbo {
                 }
             }
         } catch (SQLException e) {
-            errada("Registe fallit");
+            System.out.println(e.getMessage());
         }
     }
 
