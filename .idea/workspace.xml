@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="faa32120-fe8b-45dc-80d5-febfc52eadbe" name="Changes" comment="primer commit">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/es.cc.esliceu.db.limbo/Limbo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/es.cc.esliceu.db.limbo/Limbo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/es.cc.esliceu.db.limbo/dao/LimboDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/es.cc.esliceu.db.limbo/dao/LimboDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/es.cc.esliceu.db.limbo/dao/Connexio.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/es.cc.esliceu.db.limbo/dao/LimboDAOImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/es.cc.esliceu.db.limbo/dao/LimboDAOImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
