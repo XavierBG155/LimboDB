@@ -1,8 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="faa32120-fe8b-45dc-80d5-febfc52eadbe" name="Changes" comment="primer commit">
-      <change afterPath="$PROJECT_DIR$/src/es.cc.esliceu.db.limbo/dao/Connexio.java" afterDir="false" />
+    <list default="true" id="faa32120-fe8b-45dc-80d5-febfc52eadbe" name="Changes" comment="Classe connexio">
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/javax_mail_1_6_2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/javax_mail_1_6_2.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/limbo.properties" beforeDir="false" afterPath="$PROJECT_DIR$/resources/limbo.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/es.cc.esliceu.db.limbo/EnviadorEmail.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/es.cc.esliceu.db.limbo/EnviadorEmail.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/es.cc.esliceu.db.limbo/Limbo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/es.cc.esliceu.db.limbo/Limbo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/es.cc.esliceu.db.limbo/dao/Connexio.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/es.cc.esliceu.db.limbo/dao/LimboDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/es.cc.esliceu.db.limbo/dao/LimboDAO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/es.cc.esliceu.db.limbo/dao/LimboDAOImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/es.cc.esliceu.db.limbo/dao/LimboDAOImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -34,10 +44,10 @@
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/berga/Downloads/javax.mail-1.6.2.jar&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/classe/BBDD/javax.mail-1.6.2.jar&quot;,
     &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;
   }
 }</component>
   <component name="RecentsManager">
@@ -81,7 +91,14 @@
       <option name="project" value="LOCAL" />
       <updated>1686076221438</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Classe connexio">
+      <created>1686808235899</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1686808235899</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -97,6 +114,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="primer commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="primer commit" />
+    <MESSAGE value="Classe connexio" />
+    <option name="LAST_COMMIT_MESSAGE" value="Classe connexio" />
   </component>
 </project>

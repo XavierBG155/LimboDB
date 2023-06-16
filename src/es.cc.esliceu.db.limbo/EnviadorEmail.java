@@ -1,13 +1,11 @@
 package es.cc.esliceu.db.limbo;
 
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.IOException;
-import java.util.Properties;
 import javax.mail.*;
 import javax.mail.internet.AddressException;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
+import java.io.FileInputStream;
+import java.util.Properties;
 
 public class EnviadorEmail {
     private String user;

@@ -6,6 +6,6 @@ import java.sql.SQLException;
 
 public interface LimboDAO {
     void registreUsuari(Usuari usuari) throws SQLException;
-    void loginUsuari(String s) throws SQLException;
+    void loginUsuari(String dada, String s) throws SQLException;
     void ajuda(Usuari usuari) throws SQLException;
 }
