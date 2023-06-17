@@ -1,14 +1,16 @@
 package es.cc.esliceu.db.limbo.domain;
 
 public class Usuari {
+    int ID;
     String USERNAME;
     String EMAIL;
     String PASSWORD;
     String NOM;
     String Llinatge1, Llinatge2;
 
-    public Usuari(String USERNAME, String EMAIL, String PASSWORD,
-                  String NOM, String llinatge1, String llinatge2) {
+    public Usuari(int ID, String EMAIL, String NOM, String llinatge1,
+                  String llinatge2, String USERNAME, String PASSWORD) {
+        this.ID = ID;
         this.USERNAME = USERNAME;
         this.EMAIL = EMAIL;
         this.PASSWORD = PASSWORD;
@@ -16,6 +18,8 @@ public class Usuari {
         this.Llinatge1 = llinatge1;
         this.Llinatge2 = llinatge2;
     }
+
+    public int getID() {return ID;}
 
     public String getUSERNAME() {
         return USERNAME;
@@ -64,4 +68,5 @@ public class Usuari {
     public void setLlinatge2(String llinatge2) {
         Llinatge2 = llinatge2;
     }
+
 }

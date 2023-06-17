@@ -4,16 +4,32 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="faa32120-fe8b-45dc-80d5-febfc52eadbe" name="Changes" comment="Classe connexio">
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/javax_mail_1_6_2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/javax_mail_1_6_2.xml" afterDir="false" />
+    <list default="true" id="faa32120-fe8b-45dc-80d5-febfc52eadbe" name="Changes" comment="connexio">
+      <change afterPath="$PROJECT_DIR$/src/es.cc.esliceu.db.limbo/dao/AdrecaDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/es.cc.esliceu.db.limbo/dao/AdrecaDAOImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/es.cc.esliceu.db.limbo/dao/CiutatDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/es.cc.esliceu.db.limbo/dao/CiutatDAOImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/es.cc.esliceu.db.limbo/dao/CompraDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/es.cc.esliceu.db.limbo/dao/CompraDAOImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/es.cc.esliceu.db.limbo/dao/ProducteDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/es.cc.esliceu.db.limbo/dao/ProducteDAOImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/es.cc.esliceu.db.limbo/dao/TargetaDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/es.cc.esliceu.db.limbo/dao/TargetaDAOImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/es.cc.esliceu.db.limbo/dao/UsuariDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/es.cc.esliceu.db.limbo/dao/UsuariDAOImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/es.cc.esliceu.db.limbo/domain/Adreca.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/es.cc.esliceu.db.limbo/domain/Categoria.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/es.cc.esliceu.db.limbo/domain/Ciutat.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/es.cc.esliceu.db.limbo/domain/Compra.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/es.cc.esliceu.db.limbo/domain/Producte.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/es.cc.esliceu.db.limbo/domain/Targeta.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/es.cc.esliceu.db.limbo/util/Connexio.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/limbo.properties" beforeDir="false" afterPath="$PROJECT_DIR$/resources/limbo.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/es.cc.esliceu.db.limbo/EnviadorEmail.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/es.cc.esliceu.db.limbo/EnviadorEmail.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/es.cc.esliceu.db.limbo/Limbo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/es.cc.esliceu.db.limbo/Limbo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/es.cc.esliceu.db.limbo/dao/Connexio.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/es.cc.esliceu.db.limbo/dao/LimboDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/es.cc.esliceu.db.limbo/dao/LimboDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/es.cc.esliceu.db.limbo/dao/LimboDAOImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/es.cc.esliceu.db.limbo/dao/LimboDAOImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/es.cc.esliceu.db.limbo/dao/LimboDAO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/es.cc.esliceu.db.limbo/dao/LimboDAOImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/es.cc.esliceu.db.limbo/domain/Usuari.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/es.cc.esliceu.db.limbo/domain/Usuari.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,6 +39,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
@@ -51,8 +68,17 @@
   }
 }</component>
   <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="es.cc.esliceu.db.limbo.domain" />
+      <recent name="es.cc.esliceu.db.limbo" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\berga\Desktop\classe\LimboDB\src" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="es.cc.esliceu.db.limbo.dao.adreca" />
+      <recent name="es.cc.esliceu.db.limbo.dao" />
+      <recent name="es.cc.esliceu" />
     </key>
   </component>
   <component name="RunManager">
@@ -98,7 +124,14 @@
       <option name="project" value="LOCAL" />
       <updated>1686808235899</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="connexio">
+      <created>1686902729697</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1686902729697</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -115,6 +148,17 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="primer commit" />
     <MESSAGE value="Classe connexio" />
-    <option name="LAST_COMMIT_MESSAGE" value="Classe connexio" />
+    <MESSAGE value="connexio" />
+    <option name="LAST_COMMIT_MESSAGE" value="connexio" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint type="java-exception">
+          <properties class="java.sql.SQLException" package="java.sql" />
+          <option name="timeStamp" value="2" />
+        </breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
