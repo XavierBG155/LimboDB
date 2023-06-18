@@ -22,18 +22,19 @@ import es.cc.esliceu.db.limbo.domain.Usuari;
 import es.cc.esliceu.db.limbo.util.Color;
 
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 import java.util.Scanner;
 
 public class Limbo {
 
-static TargetaDAO targetaDAO = new TargetaDAOImpl();
-static UsuariDAO usuariDAO = new UsuariDAOImpl();
-static CiutatDAO ciutatDAO=new CiutatDAOImpl();
-static CompraDAO compraDAO = new CompraDAOImpl();
-static ProducteDAO producteDAO = new ProducteDAOImpl();
-static AdrecaDAO adrecaDAO = new AdrecaDAOImpl();
+    static TargetaDAO targetaDAO = new TargetaDAOImpl();
+    static UsuariDAO usuariDAO = new UsuariDAOImpl();
+    static CiutatDAO ciutatDAO = new CiutatDAOImpl();
+    static CompraDAO compraDAO = new CompraDAOImpl();
+    static ProducteDAO producteDAO = new ProducteDAOImpl();
+    static AdrecaDAO adrecaDAO = new AdrecaDAOImpl();
     static Scanner scanner = new Scanner(System.in);
 
     public static void main(String[] args) {
@@ -125,44 +126,104 @@ static AdrecaDAO adrecaDAO = new AdrecaDAOImpl();
     }
 
     private static void principal(String nomUsuari) throws SQLException {
+        Cistella cistella = new Cistella();
+        List<Producte> llistaProductes = new ArrayList<>();
+        menuOpcions(nomUsuari, cistella, llistaProductes);
+        String seleccio = "S";
+        while (seleccio.equals("S") || seleccio.equals("s")) {
+            System.out.println(Color.BLACK_BOLD + "" + Color.YELLOW_BACKGROUND + "Esculli una opció:" + Color.RESET);
+            String opcio = scanner.next();
+            scanner.nextLine();
+            switch (opcio) {
+                case "c" -> cercaProducte();
+                case "v" -> veureCistella(nomUsuari, cistella);
+                case "x" -> menuPrincipal();
+                case "d" -> dadesPersonals(nomUsuari);
+            }
+            if (opcio.equals("0") || opcio.equals("1") || opcio.equals("2") ||
+                    opcio.equals("3") || opcio.equals("4")) afegirProductes(opcio, llistaProductes, cistella);
+            System.out.println("Vols fer algo més? (S/N)");
+            seleccio = scanner.nextLine();
+            if (seleccio.equals("S")) menuOpcions(nomUsuari, cistella, llistaProductes);
+        }
+    }
+
+    private static void veureCistella(String nomUsuari, Cistella cistella) throws SQLException {
+        Usuari usuari = usuariDAO.selectUser(nomUsuari);
+        System.out.printf(Color.YELLOW_BRIGHT + """
+                        **************************************************
+                        **                     Cistella                 **
+                        **************************************************"""
+                , usuari.getNOM(), usuari.getLlinatge1(), usuari.getUSERNAME());
+        System.out.println();
         try {
-            Usuari usuari = usuariDAO.selectUser(nomUsuari);
-            System.out.printf(Color.YELLOW_BRIGHT + """
-                            **************************************************
-                            **                  Opcions                     **
-                            Usuari:""" + Color.WHITE_BRIGHT + """
-                            %s %s""" + Color.RED_BRIGHT + "  %s \n" + Color.YELLOW_BRIGHT +
-                            "**************************************************\n"
-                    , usuari.getNOM(), usuari.getLlinatge1(), usuari.getUSERNAME());
-        } catch (SQLException e) {
+            List<ProducteEnCistella> llistaProductes = cistella.llistaProductes();
+            int i = 0;
+            for (ProducteEnCistella producte : llistaProductes) {
+                System.out.printf(Color.YELLOW_BRIGHT + "%d" + Color.CYAN_BRIGHT + "  %s" + Color.WHITE_BRIGHT + "  %.2f  %d unitats\n", i, producte.getNom(), producte.getPreu(), producte.getQuantitat());
+                i++;
+            }
+            System.out.printf("""
+                    ---------------------------------------
+                    Total cistella:""" + Color.CYAN + " %.2f" + Color.WHITE_BRIGHT +
+                    "---------------------------------------", cistella.calculaTotal()
+            );
+            System.out.println(Color.WHITE_BRIGHT + "e) Eliminar producte");
+            System.out.println(Color.WHITE_BRIGHT + "p) Pagar");
+            System.out.println(Color.WHITE_BRIGHT + "x) Sortir cistella");
+            System.out.println(Color.BLACK_BOLD + "" + Color.YELLOW_BACKGROUND + "Esculli una opció de cistella:" + Color.RESET);
+            String opcio = scanner.nextLine();
+            switch (opcio) {
+                case "e" -> eliminaProducte(cistella);
+                case "p" -> realitzarPagament();
+                case "x" -> dadesPersonals(nomUsuari);
+            }
+        } catch (Exception e) {
             throw new RuntimeException(e);
         }
+    }
+
+    private static void realitzarPagament() {
+        System.out.println("NO IMPLEMENTAT");
+        menuPrincipal();
+    }
+
+    private static void eliminaProducte(Cistella cistella) {
+        System.out.println("NO IMPLEMENTAT");
+        menuPrincipal();
+    }
+
+    private static void llistaAleatoriaDeProductes(List<Producte> llistaProductes) throws SQLException {
+        for (int i = 0; i < 5; i++) {
+            Producte producte = producteDAO.producteAleatori();
+            llistaProductes.add(producte);
+            System.out.printf(Color.YELLOW_BRIGHT + "%d" + Color.WHITE_BRIGHT + "   %s   %s" + Color.GREEN_BRIGHT + "   %s" + Color.CYAN + "   %.2f€\n", i, producte.getNom(), producte.getDescripcio(), producte.getMarca(), producte.getPvp());
+        }
+    }
+
+    private static void menuOpcions(String nomUsuari, Cistella cistella, List<Producte> llistaProductes) throws SQLException {
+
+        Usuari usuari = usuariDAO.selectUser(nomUsuari);
+        System.out.printf(Color.YELLOW_BRIGHT + """
+                        **************************************************
+                        **                  Opcions                     **
+                        Usuari:""" + Color.WHITE_BRIGHT + """
+                        %s %s""" + Color.RED_BRIGHT + "  %s \n" + Color.CYAN + "Cistell: " + Color.RED_BRIGHT + "%.2f€\n" + Color.YELLOW_BRIGHT +
+                        "**************************************************\n"
+                , usuari.getNOM(), usuari.getLlinatge1(), usuari.getUSERNAME(), cistella.calculaTotal());
         System.out.println(Color.CYAN + "c)" + Color.WHITE_BRIGHT + " Cerca productes");
         System.out.println(Color.CYAN + "v)" + Color.WHITE_BRIGHT + " Veure cistella");
         System.out.println(Color.CYAN + "d)" + Color.WHITE_BRIGHT + " Dades personals");
         System.out.println(Color.CYAN + "h)" + Color.WHITE_BRIGHT + " Ajuda");
         System.out.println(Color.CYAN + "x)" + Color.WHITE_BRIGHT + " Sortir");
         System.out.println(Color.RED_BRIGHT + "---------------    Productes suggerits     ---------------");
-
-        try {
-            for (int i = 0; i < 5; i++) {
-                Producte producte = producteDAO.producteAleatori();
-                System.out.printf(Color.YELLOW_BRIGHT + "%d" + Color.WHITE_BRIGHT + "   %s   %s" + Color.GREEN_BRIGHT + "   %s" + Color.CYAN + "   %.2f€\n", i, producte.getNom(), producte.getDescripcio(), producte.getMarca(), producte.getPvp());
-            }
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
-        }
+        llistaAleatoriaDeProductes(llistaProductes);
         System.out.println(Color.RED_BRIGHT + "----------------------------------------------------------");
         System.out.println(Color.CYAN + "(0-4)" + Color.WHITE_BRIGHT + "Productes suggerits");
-        System.out.println(Color.BLACK_BOLD + "" + Color.YELLOW_BACKGROUND + "Esculli una opció:" + Color.RESET);
+    }
 
-        String opcio = scanner.next();
-        scanner.nextLine();
-        switch (opcio) {
-            case "c" -> cercaProducte();
-            case "x" -> menuPrincipal();
-            case "d" -> dadesPersonals(nomUsuari);
-        }
+    private static void afegirProductes(String opcio, List<Producte> llistaProductes, Cistella cistella) {
+        cistella.afegirProducte(llistaProductes.get(Integer.parseInt(opcio)));
     }
 
     private static void dadesPersonals(String nomUsuari) throws SQLException {
@@ -254,7 +315,7 @@ static AdrecaDAO adrecaDAO = new AdrecaDAOImpl();
         scanner.nextLine();
         System.out.printf("Segur que vols eliminar la targeta amb id %d? (si/no): ", targetaId);
         String opcio = scanner.nextLine();
-        if (Objects.equals(opcio, "si") || Objects.equals(opcio, "Si")){
+        if (Objects.equals(opcio, "si") || Objects.equals(opcio, "Si")) {
             targetaDAO.eliminarTargeta(targetaId);
         } else eliminarTargetaMenu();
     }
@@ -429,10 +490,6 @@ static AdrecaDAO adrecaDAO = new AdrecaDAOImpl();
         }
 
     }
-
-/*    public static void info(String texte) {
-        System.out.println(Color.BLUE_BOLD + "\t" + texte + Color.RESET);
-    }*/
 
     public static void errada(String texte) {
         System.out.println(Color.RED_BOLD + "\t" + texte + Color.RESET);
